@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criador de Monstros</title>
+</head>
+<body>
+    <h1>Criador de Monstros</h1>
+    <button onclick="criarMonstro()">Criar Monstro</button>
+
+    <script>
+        function criarMonstro() {
+            const nome = prompt("Digite o nome do monstro:");
+            const tipo = prompt("Digite o tipo do monstro:");
+            let forca = parseInt(prompt("Digite o nível de força do monstro (1-100):"));
+            const habilidade = prompt("Digite a habilidade especial do monstro:");
+
+            // Validação da força
+            if (isNaN(forca) || forca < 1 || forca > 100) {
+                forca = 1;
+                alert("Força inválida. Definindo para 1.");
+            }
+
+            const descricao = `O monstro ${nome} é um ${tipo} de nível ${forca} e possui a habilidade especial: ${habilidade}.`;
+            
+            alert(descricao);
+        }
+    </script>
+</body>
+</html>
